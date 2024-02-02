@@ -35,7 +35,7 @@ const postRegister = async (req,res)=>{
 
 const getProtected = (req,res)=>{
     if(req.isAuthenticated()){
-        res.send("get protected")
+        res.render("simpleuser",{user:req.user})
     }
     else{
         res.render("unauthorized");
@@ -46,7 +46,8 @@ const getProtected = (req,res)=>{
 
 const getProtectedGoogle = (req,res)=>{
     if(req.isAuthenticated()){
-        res.send("google protected route")
+
+        res.render("googlecard",{user:req.user})
     }
     else{
         res.render("unauthorized");
