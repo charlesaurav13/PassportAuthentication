@@ -37,12 +37,12 @@ To deploy this project,make sure you are in the same directory of the project
 
 #### Login page for local authentication
 
-```http
+```
   GET /api/v1/auth/login
 ```
 #### Registration page for local authentication
 
-```http
+```
   GET /api/v1/auth/register 
 ```
 
