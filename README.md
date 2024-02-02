@@ -48,21 +48,21 @@ To deploy this project,make sure you are in the same directory of the project
 
 #### Initiates Google OAuth2.0 authentication
 
-```http
+```
   GET /api/v1/auth/google
 ```
 #### Logs out the user
 
-```http
+```
   GET /api/v1/auth/logout
 ```
 #### Protected route requiring authentication for local
 
-```http
+```
   GET /api/v1/auth/protected
 ```
 #### Protected route specifically for users authenticated with Google
 
-```http
+```
   GET /api/v1/auth/google/protected
 ```
