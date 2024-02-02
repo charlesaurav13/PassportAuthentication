@@ -24,7 +24,28 @@ Open cmd and type
 
  npm install
 ```
+Make a .env file and make these variables and put those values.
+```bash
+PORT
+GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET
+CALLBACK_URL
+SECRET
+DATABASE_URL
+```
     
+## Google credentials
+First we have to get Google credentials . To get credentials if don’t already have them go to https://console.cloud.google.com/
+
+1)create a new project
+
+2)Select the project and click credentials and the select OAuth client ID
+
+3)Now Select Web Application in application type.
+
+4)Input your app name or whatever else you like , in Authorized JavaScript origins add this line http://localhost:9000  and in Authorized redirect URIs field add this line http://127.0.0.1:9000/api/v1/auth/google/callback and the click to create .
+
+5)Now copy your Google client ID and Google client secret and paste above in environment variables.
 ## Deployment
 
 To deploy this project,make sure you are in the same directory of the project
@@ -66,3 +87,12 @@ To deploy this project,make sure you are in the same directory of the project
 ```
   GET /api/v1/auth/google/protected
 ```
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Authors
+
+- [@charlesaurav13](https://github.com/charlesaurav13)
+
