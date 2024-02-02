@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="logo">
+    </div>
+
+    <div class="container">
+      <h1>Register your account</h1>
+      <div class="divider">  
+        <div class="line"></div>
+      </div>
+      <form action="register" method="POST">
+        <label for="username">UserName:</label>
+        <div class="custom-input">
+          <input
+            type="username"
+            name="username"
+            placeholder="Your Username"
+            autocomplete="off"
+          /><i class="bx bxs-user"></i>
+        </div>
+        <label for="email">Email:</label>
+        <div class="custom-input">
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            autocomplete="off"
+          />
+          <i class="bx bx-at"></i>
+        </div>
+        <label for="password">Password:</label>
+        <div class="custom-input">
+          <input type="password" name="password" placeholder="Your Password" />
+          <i class="bx bx-lock"></i>
+        </div>
+        <button class="login">Register</button>
+        <div class="links">
+          <a href="login">Already have account?</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

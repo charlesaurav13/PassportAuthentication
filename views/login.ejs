@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="logo">
+    </div>
+
+    <div class="container">
+      
+      <h1>Login to  your account</h1>
+      <div class="social-login">
+        <button id="google">
+          <i class='bx bxl-google'></i>Google
+        </button>
+      </div>
+      <div class="divider">
+        <div class="line"></div>
+      </div>
+      <form action="login" method="POST">
+        <label for="username">UserName:</label>
+        <div class="custom-input">
+          <input
+            type="username"
+            name="username"
+            placeholder="Your Username"
+            autocomplete="off"
+          /><i class="bx bxs-user"></i>
+        </div>
+        <label for="password">Password:</label>
+        <div class="custom-input">
+          <input type="password" name="password" placeholder="Your Password" />
+          <i class="bx bx-lock"></i>
+        </div>
+        <button class="login">Login</button>
+        <div class="links">
+          <a href="register">Don't have a account?</a>
+        </div>
+      </form>
+    </div>
+    <script>
+        let button = document.getElementById("google");
+        button.addEventListener("click",()=>{
+            window.location.href="google";
+        });
+    </script>
+  </body>
+</html>
