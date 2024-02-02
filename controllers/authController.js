@@ -1,7 +1,8 @@
-const { log} = require("console")
 const bcrypt = require("bcrypt")
 
 const Usermodal = require("../models/userSchema")
+
+
 const getLogin =(req,res)=>{
     res.render("login")
 
@@ -26,7 +27,6 @@ const postRegister = async (req,res)=>{
         })
         await user.save()
         res.redirect("login");
-        
 
        }catch(err){
         res.send(err.message)
@@ -34,17 +34,32 @@ const postRegister = async (req,res)=>{
     }
 
 const getProtected = (req,res)=>{
-    res.send("get protected")
+    if(req.isAuthenticated()){
+        res.send("get protected")
+    }
+    else{
+        res.render("unauthorized");
+    }
+   
 
 }
 
 const getProtectedGoogle = (req,res)=>{
-    res.send("google protected route")
+    if(req.isAuthenticated()){
+        res.send("google protected route")
+    }
+    else{
+        res.render("unauthorized");
+    }
+   
 
 }
 
 const getLogout = (req,res)=>{
-    res.send("Logout")
+    req.logout((err)=>{
+        res.redirect("/api/v1/auth/login")
+    });
+    
 }
 
 module.exports = {getLogin,getRegister,getLogout,postLogin,postRegister,getProtected,getProtectedGoogle}
