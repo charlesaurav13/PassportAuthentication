@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
-const dotenv = require("dotenv");
-const { log } = require('console');
 
-dotenv.config({path:"./cofig.env"})
-const mongoURI = process.env.DATABASE_URL || "mongodb://127.0.0.1:27017/passport";
+
+const mongoURI = process.env.DATABASE_URL;
 
 mongoose.connect(mongoURI);
 
 const db = mongoose.connection;
 
 db.on('connected', () => {
-  console.log('Connected to MongoDB');
+  console.log('[*] Connected to MongoDB DataBase');
 });
 
 db.on('error', (err) => {

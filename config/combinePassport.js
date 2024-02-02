@@ -2,7 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const Usermodal = require("../models/userSchema");
-const UserGoogle = require("../models/userSchema-google");
+const UserGoogle = require("../models/userSchemaGoogle");
 const bcrypt = require("bcrypt");
 
 // Local Strategy
@@ -30,13 +30,12 @@ passport.use(
   })
 );
 
-
 // Google Strategy
 passport.use(
   new GoogleStrategy(
     {
-      clientID:process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID:process.env.GOOGLE_CLIENT_ID ,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ,
       callbackURL:process.env.CALLBACK_URL,
     },
     async (accessToken, refreshToken, profile, done) => {
