@@ -1,4 +1,6 @@
-const { log, error } = require("console")
+const { log} = require("console")
+const bcrypt = require("bcrypt")
+
 const Usermodal = require("../models/userSchema")
 const getLogin =(req,res)=>{
     res.render("login")
@@ -16,13 +18,14 @@ const postLogin = (req,res)=>{
 const postRegister = async (req,res)=>{
     const {username,email,password} = req.body;
        try{
+        const hashedPassword = await bcrypt.hash(password, 10000);
         const user = new Usermodal({
-            username:username,
-            email:email,
-            password:password
+            username,
+            email,
+            password:hashedPassword
         })
         await user.save()
-        res.send({msg:"User created"})
+        res.redirect("login");
         
 
        }catch(err){
