@@ -8,7 +8,7 @@ require("./database/db");
 const authRoutes = require("./routes/getAuth");
 require("./config/combinePassport")
 const path = require("path")
-
+const cors = require("cors")
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors("*"));
 
 // Middleware
 
